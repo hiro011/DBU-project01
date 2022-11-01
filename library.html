@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://197.156.88.195/ -->
+<html lang="en" class=" js  fonts-loaded">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Debre Berhan University \library catalog</title>
+
+    <meta name="generator" content="Koha 19.1112000"> <!-- leave this for stats -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="http://10.18.3.8/opac-tmpl/custom/img/dbu-favicon.gif" type="image/x-icon">
+
+    <link href="./library_catalog_files/bootstrap.min_19.1112000.css" rel="stylesheet" type="text/css">
+    <link href="./library_catalog_files/jquery-ui-1.12.1.min_19.1112000.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./library_catalog_files/opac_19.1112000.css">
+    <link media="print" href="./library_catalog_files/print_19.1112000.css" type="text/css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="./library_library_catalog_files/font-awesome.min_19.1112000.css">
+    <link rel="search" type="application/opensearchdescription+xml" href="http://10.18.3.8/cgi-bin/koha/opac-search.pl?format=opensearchdescription" title="Search Debre Berhan University \library">
+    <link rel="unapi-server" type="application/xml" title="unAPI" href="http://10.18.3.8/cgi-bin/koha/unapi">
+    <link id="flipster-css" href="./library_catalog_files/jquery.flipster.min.css"type="text/css" rel="stylesheet">
+	<link rel="stylesheet" href="styles/library_style.css">
+	
+		
+    <script src="./library_catalog_files/enquire.min_19.1112000.js.download"></script>
+    <script src="./library_catalog_files/script_19.1112000.js.download"></script>
+    <script src="./library_catalog_files/Gettext_19.1112000.js.download"></script>
+    <script src="./library_catalog_files/i18n_19.1112000.js.download"></script>
+    <script src="./library_catalog_files/modernizr.min_19.1112000.js.download"></script>
+	<script>
+        var Koha = {};
+        function _(s) { return s } // dummy function for gettext
+    </script>
+
+</head>
+
+
+<body id="opac-main" class="branch-default">
+
+
+    <div id="wrap">
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div id="opacheader">
+                    <div id="opactop-header">
+                        <img src="./library_catalog_files/header2.jpg"
+                            style="width:100%;height:60px;">
+                    </div>
+
+                    <section id="navbar">
+                        <div class="topnav">
+                            <div>
+ 
+								<a href="home.html">Home</a>
+								<a id = "link" href="news.html">News</a>
+								<a id = "link" href="students.html">Students</a>
+								<a class="active" id = "link" href="library.html">Library</a>
+								<a id = "link" href="gallery.html">Gallery</a>
+								<a id = "link" href="contact.html">Contact</a>
+								<a id = "link" href="about.html">About</a>
+ 
+                            </div>
+                        </div>
+                    </section>
+
+                    <script>
+                        window.onscroll = function () { myFunction() };
+
+                        var navbar = document.getElementById("navbar");
+                        var sticky = navbar.offsetTop;
+
+                        function myFunction() {
+                            if (window.pageYOffset >= sticky) {
+                                navbar.classList.add("sticky")
+                            } else {
+                                navbar.classList.remove("sticky");
+                            }
+                        }
+                    </script>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div id="opac-main-search">
+                    <div class="span12">
+
+                        <div class="mastheadsearch">
+
+                            <form name="searchform" method="get"
+                                action="http://197.156.88.195/cgi-bin/koha/opac-search.pl" id="searchform"
+                                class="form-inline">
+                                <label for="masthead_search"> Search
+
+                                </label>
+
+                                <select name="idx" id="masthead_search">
+
+                                    <option value="">Keyword</option>
+
+
+                                    <option value="ti">Title</option>
+
+
+                                    <option value="au">Author</option>
+
+
+                                    <option value="su">Subject</option>
+
+
+                                    <option value="nb">ISBN</option>
+
+
+                                    <option value="ns">ISSN</option>
+
+
+                                    <option value="se">Series</option>
+
+                                    <option value="callnum">Call number</option>
+
+                                </select>
+
+                                <div class="input-append nolibrarypulldown">
+
+                                    <input type="text" title="Type search term" class="transl1" id="translControl1"
+                                        name="q" placeholder="Search for library items"><span id="translControl"></span>
+
+
+
+                                    <button type="submit" id="searchsubmit" class="btn btn-primary">Go</button>
+                                </div>
+
+                            </form>
+
+                        </div> <!-- / .mastheadsearch -->
+
+                    </div> <!-- /.span10 -->
+                </div> <!-- /.opac-main-search -->
+            </div> <!-- / .row-fluid -->
+        </div> <!-- /.container-fluid -->
+
+        <!-- Login form hidden by default, used for modal window -->
+        <div id="loginModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="modalLoginLabel"
+            aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="closebtn" data-dismiss="modal" aria-hidden="true">×</button>
+                <h2 id="modalLoginLabel">Log in to your account</h2>
+            </div>
+            <form action="http://197.156.88.195/cgi-bin/koha/opac-user.pl" method="post" name="auth" id="modalAuth">
+                <input type="hidden" name="has-search-query" id="has-search-query" value="">
+                <div class="modal-body">
+
+                    <input type="hidden" name="koha_login_context" value="opac">
+                    <fieldset class="brief">
+                        <label for="muserid">Login:</label><input type="text" id="muserid" name="userid">
+                        <label for="mpassword">Password:</label><input type="password" id="mpassword" name="password">
+
+
+                        <div id="forgotpassword-modal" class="forgotpassword">
+                            <a href="http://197.156.88.195/cgi-bin/koha/opac-password-recovery.pl">Forgot your
+                                password?</a>
+                        </div>
+
+
+                    </fieldset>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-primary" value="Log in">
+                </div>
+            </form> <!-- /#auth -->
+        </div> <!-- /#modalAuth  -->
+
+
+        <div class="main">
+            <ul class="breadcrumb">
+                <li><a href="http://197.156.88.195/cgi-bin/koha/opac-main.pl">Home</a>
+
+                </li>
+            </ul>
+
+            <div id="notloggedin" class="container-fluid">
+
+                <div class="row-fluid">
+
+                    <div class="span2">
+                        <div id="navigation">
+
+                            <div id="opacnav">
+                                <div id="usermenu">
+                                    <div id="menu">
+                                        <ul>
+                                            <li><a href="http://10.18.3.8/cgi-bin/koha/opac-main.pl">Home</a></li>
+                                            <li><a href="http://10.18.3.8/cgi-bin/koha/opac-search.pl">Advanced
+                                                    Search</a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="opacnavbottom">
+                                <div id="usermenu">
+                                    <div id="menu">
+                                        <h4>
+                                            <a href="http://197.156.88.195/#" class="menu-collapse-toggle">Menu</a>
+                                        </h4>
+                                        <ul class="menu-collapse" style="display: block;">
+                                            <li><a href="http://10.18.3.8/cgi-bin/koha/pages.pl?p=rulereg"
+                                                    title="Rules, Regulations and Legislations of Debre Brehan University">Rule
+                                                    &amp; Regulation</a></li>
+                                            <li><a href="http://10.18.3.8/library/custom/pages.pl?p=e-resource"
+                                                    title="Subscribed E-Journal and E-Resources">E-Journals</a></li>
+                                            <li><a target="_blank" href="http://10.18.3.6/"
+                                                    title="Digital Library">Digital Library</a></li>
+                                            <li><a target="_blank" href="http://etd.dbu.edu.et/"
+                                                    title="Thesis and Dissertation Institutional Repository">Thesis
+                                                    &amp; Dissertation</a></li>
+                                            <li><a href="http://10.18.3.8/cgi-bin/koha/pages.pl?p=faqs"
+                                                    title="Frequently Asked Questions">FAQS</a></li>
+                                            <li><a href="http://10.18.3.8/cgi-bin/koha/pages.pl?p=aboutus">About us</a>
+                                            </li>
+                                            <li><a href="http://10.18.3.8/cgi-bin/koha/pages.pl?p=contactus">Contact
+                                                    us</a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="span7 maincontent">
+
+                        <!-- koha news -->
+
+                        <div id="opacmainuserblock">
+                            <h4>New Arrivals</h4>
+                            <hr>
+                            <span id="coverflow"
+                                class="flipster flipster--transform flipster--coverflow flipster--click flipster--active"
+                                tabindex="0">
+                                <div class="koha-coverflow">
+                                    <ul class="flipster__container"
+                                        style="height: 380px; transform: translateX(-960.117px);">
+
+
+                                        <li class="flipster__item  flipster__item--past flipster__item--past-19"
+                                            style="z-index: 0; margin-right: -92.175px;">
+                                            <div class="flipster__item__content">
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/NoImage.png">
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=17696">መጽሐፈ
+                                                    ውይይት ::</a>
+
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--past flipster__item--past-18"
+                                            style="z-index: 1; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/NoImage.png">
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=17355">ያትዉልድ
+                                                    የኢትዮጲያ ሕዝባዊ አብዮታዊ ፓርቲ ታሪክ </a>
+
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--past flipster__item--past-17"
+                                            style="z-index: 2; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/NoImage.png">
+
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=17120">
+                                                    A nervous splendor : Vienna, 1888/1889</a>
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--past flipster__item--past-16"
+                                            style="z-index: 3; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/1111344450.01.LZZZZZZZ.jpg">
+
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=16770">Media
+                                                    effects research :</a>
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--past flipster__item--past-15"
+                                            style="z-index: 4; margin-right: -92.175px;">
+                                            <div class="flipster__item__content">
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/NoImage.png">
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=8730">አጥቢዎች/</a>
+
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--past flipster__item--past-14"
+                                            style="z-index: 5; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/1259620727.01.LZZZZZZZ.jpg">
+
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=16814">Computer
+                                                    Accounting with QuickBooks 2015 with Student Resource CD-ROM/</a>
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--past flipster__item--past-13"
+                                            style="z-index: 6; margin-right: -92.175px;">
+                                            <div class="flipster__item__content">
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/NoImage.png">
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=17672">ያልተሸነፈው</a>
+
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--past flipster__item--past-12"
+                                            style="z-index: 7; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/NoImage.png">
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=17431">ነፃነትን
+                                                    የማያዉቅ ነፃ አዉጪ ፤ስልጣኔ ፣ዴሞክራሲ እና ብልፅግና ፤የፖለቲካ ልሂቃን ሚና በዘመናዊ ኢትዮጲያ </a>
+
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--past flipster__item--past-11"
+                                            style="z-index: 8; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/1111526494.01.LZZZZZZZ.jpg">
+
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=16861">New
+                                                    perspectives on Microsoft Windows 7 for power users :</a>
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--past flipster__item--past-10"
+                                            style="z-index: 9; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/1133190588.01.LZZZZZZZ.jpg">
+
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=16590">New
+                                                    perspectives on computer concepts 2013, brief/</a>
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--past flipster__item--past-9"
+                                            style="z-index: 10; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/NoImage.png">
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=16947">
+                                                    Information for all : access and availability</a>
+
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--past flipster__item--past-8"
+                                            style="z-index: 11; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/NoImage.png">
+
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=17594">The
+                                                    spirit of a nation :</a>
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--past flipster__item--past-7"
+                                            style="z-index: 12; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/NoImage.png">
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=17634">
+                                                    Revolution and religion in Ethiopia : a study of church and politics
+                                                    with special reference to the Ethiopian Evangelical Church Mekane
+                                                    Yesus, 1974-1985</a>
+
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--past flipster__item--past-6"
+                                            style="z-index: 13; margin-right: -99.6px;">
+                                            <div class="flipster__item__content">
+
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/0073532290.01.LZZZZZZZ.jpg">
+
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=16636">Understanding
+                                                    biology/</a>
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--past flipster__item--past-5"
+                                            style="z-index: 14; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/NoImage.png">
+
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=17116">Education
+                                                    in Ethiopia : prospect and retrospect</a>
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--past flipster__item--past-4"
+                                            style="z-index: 15; margin-right: -92.175px;">
+                                            <div class="flipster__item__content">
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/NoImage.png">
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=17360">የዘመን
+                                                    ቀለማት</a>
+
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--past flipster__item--past-3"
+                                            style="z-index: 16; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/NoImage.png">
+
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=17128">
+                                                    An introduction to anthropology</a>
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--past flipster__item--past-2"
+                                            style="z-index: 17; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/NoImage.png">
+
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=12009">Culture
+                                                    and development in Africa :</a>
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--past flipster__item--past-1"
+                                            style="z-index: 18; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/0932415113.01.LZZZZZZZ.jpg">
+
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=17007">Empress
+                                                    Taytu and Menilek II :</a>
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--current"
+                                            style="z-index: 31; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/8126506458.01.LZZZZZZZ.jpg">
+
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=624">BUILDING
+                                                    THE DATA WAREHOUSE /</a>
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--future flipster__item--future-1"
+                                            style="z-index: 10; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/0851996019.01.LZZZZZZZ.jpg">
+
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=16908">Quantitative
+                                                    genetics, genomics, and plant breeding /</a>
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--future flipster__item--future-2"
+                                            style="z-index: 9; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/NoImage.png">
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=17135">History
+                                                    and social anthropology</a>
+
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--future flipster__item--future-3"
+                                            style="z-index: 8; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/NoImage.png">
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=17525">ብቸኛውአፍሪካዊ
+                                                    ፍደል ተሻሽሎ የቀረበ አዲስ የኢትዮጵያ ሥርዓተ ፊደል ገበታና የንባብ መለማመጃ</a>
+
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--future flipster__item--future-4"
+                                            style="z-index: 7; margin-right: -92.175px;">
+                                            <div class="flipster__item__content">
+
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/NoImage.png">
+
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=17284">ቀኝ
+                                                    ጌታ ዮፍታሔ ንጉሤ:</a>
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--future flipster__item--future-5"
+                                            style="z-index: 6; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/0470768649.01.LZZZZZZZ.jpg">
+
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=16877">Real-time
+                                                    systems design and analysis :</a>
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--future flipster__item--future-6"
+                                            style="z-index: 5; margin-right: -92.175px;">
+                                            <div class="flipster__item__content">
+
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/NoImage.png">
+
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=17723">ኬርታ:</a>
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--future flipster__item--future-7"
+                                            style="z-index: 4; margin-right: -92.175px;">
+                                            <div class="flipster__item__content">
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/NoImage.png">
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=17076">አፈላማ
+                                                </a>
+
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--future flipster__item--future-8"
+                                            style="z-index: 3; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/0195328795.01.LZZZZZZZ.jpg">
+
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=16917">
+                                                    Fair trade for all : how trade can promote development/</a>
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--future flipster__item--future-9"
+                                            style="z-index: 2; margin-right: -96.9564px;">
+                                            <div class="flipster__item__content">
+
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/0072226447.01.LZZZZZZZ.jpg">
+
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=16668">HTML
+                                                    :</a>
+
+                                            </div>
+                                        </li>
+
+
+
+                                        <li class="flipster__item  flipster__item--future flipster__item--future-10"
+                                            style="z-index: 1; margin-right: -96px;">
+                                            <div class="flipster__item__content">
+
+
+                                                <img style="max-height:200px;"
+                                                    src="./library_catalog_files/1119243335.01.LZZZZZZZ.jpg">
+
+                                                <br>
+                                                <a style="max-width:160px;display:inline-block;"
+                                                    href="http://197.156.88.195/cgi-bin/koha/opac-detail.pl?biblionumber=16725">AutoCAD
+                                                    2017 and AutoCAD LT 2017 :</a>
+
+                                            </div>
+                                        </li>
+
+
+                                    </ul>
+
+
+                                </div>
+                                <button class="flipster__button flipster__button--prev" role="button"><svg
+                                        viewBox="0 0 13 20" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title">
+                                        <title>Previous</title>
+                                        <polyline points="10,3 3,10 10,17"></polyline>
+                                    </svg></button><button class="flipster__button flipster__button--next"
+                                    role="button"><svg viewBox="0 0 13 20" xmlns="http://www.w3.org/2000/svg"
+                                        aria-labelledby="title">
+                                        <title>Next</title>
+                                        <polyline points="10,3 3,10 10,17" transform="rotate(180 6.5,10)"></polyline>
+                                    </svg></button>
+                            </span>
+                            <hr>
+                            <b>List of Online E-Journals provided by Debre Berhan University.</b>
+                            <ul>
+                                <li><a href="http://www.ajol.info/" target="_blank">African Journal Online(AJOL)</a>
+                                </li>
+                                <li><a href="http://journals.cambridge.org/" target="_blank">Cambridge University Press
+                                        - Cambridge Journals Online</a></li>
+                                <li><a href="http://search.epnet.com/" target="_blank">EBSCO Host</a></li>
+                                <li><a href="http://www.ieee.org/ieeexplore" target="_blank">IEEE (Institute of
+                                        Electronic and Electrical Engineers.)</a></li>
+                                <li><a href="http://www.jstor.org/" target="_blank">JSTOR</a></li>
+                                <li><a href="http://www3.oup.co.uk/jnls/devel/journals.html" target="_blank">Oxford
+                                        University Press</a></li>
+                                <li><a href="http://muse.jhu.edu/" target="_blank">Project MUSE</a></li>
+                                <li><a href="http://www.journals.uchicago.edu/" target="_blank">University of
+                                        Chicago</a></li>
+                                <li>For more E-Journals and E-resources, click <a
+                                        href="http://10.18.3.8/library/custom/pages.pl?p=e-resource"
+                                        title="Get List of Subscribed E-Journals and E-Resources Repository">here</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div> <!-- / .span 7/9 -->
+
+
+                    <div class="span3">
+
+                        <div id="login">
+                            <form action="http://197.156.88.195/cgi-bin/koha/opac-user.pl" method="post" name="auth"
+                                id="auth" autocomplete="off">
+                                <input type="hidden" name="koha_login_context" value="opac">
+                                <fieldset class="brief">
+                                    <legend>Log in to your account:</legend>
+                                    <label for="userid">Login:</label><input type="text" id="userid" name="userid">
+                                    <label for="password">Password:</label><input type="password" id="password"
+                                        name="password">
+                                    <fieldset class="action">
+                                        <input type="submit" value="Log in" class="btn">
+                                    </fieldset>
+
+
+                                    <div id="forgotpassword-main" class="forgotpassword">
+                                        <p><a href="http://197.156.88.195/cgi-bin/koha/opac-password-recovery.pl">Forgot
+                                                your password?</a></p>
+                                    </div>
+
+
+                                </fieldset>
+                            </form>
+                        </div> <!-- /#login -->
+
+
+                        <div class="OpacNavRight_en_item">
+
+                            <div class="OpacNavRight_en_body">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">Working Hours</div>
+                                    <div class="panel-body">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <th>
+                                                        Day
+                                                    </th>
+                                                    <th>
+                                                        Hour
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Monday
+                                                    </td>
+                                                    <td>
+                                                        8:30 AM - 6:00 AM
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Tuesday
+                                                    </td>
+                                                    <td>
+                                                        8:30 AM - 6:00 AM
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Wednesday
+                                                    </td>
+                                                    <td>
+                                                        8:30 AM - 6:00 AM
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Thursday
+                                                    </td>
+                                                    <td>
+                                                        8:30 AM - 6:00 AM
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Friday
+                                                    </td>
+                                                    <td>
+                                                        8:30 AM - 6:00 AM
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Saturday
+                                                    </td>
+                                                    <td>
+                                                        8:30 AM - 6:00 AM
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Sunday
+                                                    </td>
+                                                    <td>
+                                                        8:30 AM - 10:00 PM
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- / .span3 -->
+
+
+                </div> <!-- /.container-fluid -->
+            </div> <!-- /.row-fluid -->
+        </div> <!-- /.main -->
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div id="opaccredits" class="noprint">
+                        <!--Button to scroll to top of screen-->
+                        <div class="toTopNav" style="cursor: pointer; display: none;">^</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- / #wrap in masthead.inc -->
+
+
+    <!-- JavaScript includes -->
+    <script src="./library_catalog_files/jquery-3.4.1.min_19.1112000.js.download"></script>
+    <script
+        src="./library_catalog_files/jquery-migrate-3.1.0.min_19.1112000.js.download"></script>
+    <script src="./library_catalog_files/jquery-ui-1.12.1.min_19.1112000.js.download"></script>
+    <script>
+        // Resolve name collision between jQuery UI and Twitter Bootstrap
+        $.widget.bridge('uitooltip', $.ui.tooltip);
+    </script>
+    <script src="./library_catalog_files/bootstrap.min_19.1112000.js.download"></script>
+    <script src="./library_catalog_files/fontfaceobserver.min_19.1112000.js.download"></script>
+    <script src="./library_catalog_files/global_19.1112000.js.download"></script>
+    <script>
+        Modernizr.load([
+            // Test need for polyfill
+            {
+                test: window.matchMedia,
+                nope: "/opac-tmpl/bootstrap/lib/media.match.min_19.1112000.js"
+            },
+            // and then load enquire
+            "/opac-tmpl/bootstrap/lib/enquire.min_19.1112000.js",
+            "/opac-tmpl/bootstrap/js/script_19.1112000.js",
+        ]);
+
+        // Fix for datepicker in a modal
+        $.fn.modal.Constructor.prototype.enforceFocus = function () { };
+    </script>
+    <script src="./library_catalog_files/config_19.1112000.js.download"></script>
+    <script src="./library_catalog_files/util_19.1112000.js.download"></script>
+    <script src="./library_catalog_files/jquery.emojiarea_19.1112000.js.download"></script>
+    <script src="./library_catalog_files/emoji-picker_19.1112000.js.download"></script>
+    <script src="./library_catalog_files/basket_19.1112000.js.download"></script>
+    <script src="./library_catalog_files/tags_19.1112000.js.download"></script>
+    <script src="./library_catalog_files/google-jackets_19.1112000.js.download"></script>
+    <script src="./library_catalog_files/jquery.cookie.min_19.1112000.js.download"></script>
+    <script>
+        $(document).ready(function () {
+            //Change "Library Catalog" to "Keyword" in search dropdown menu
+            $("#masthead_search option:first").text("Keyword");
+
+            //Add placeholder to search box: "Search the catalog"
+            $(".transl1").attr("placeholder", "Search for library items");
+            //hide more search menu
+            $('#moresearches').hide();
+            $('#logo').hide();
+
+            //Create button to scroll to top of page
+            $('.toTopNav').css('cursor', 'pointer');
+            //Scroll to the top of page
+            $('.toTopNav').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 'fast');
+                return false;
+            });
+            //Make button appear only when scrolled below 100px
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.toTopNav').show();
+                }
+                if ($(this).scrollTop() < 100) {
+                    $('.toTopNav').hide();
+                }
+            });
+
+            $('.toTopNav').css('cursor', 'pointer');
+
+            $('.toTopNav').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 'fast');
+                return false;
+            });
+            //Make button appear only when scrolled below 100px
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.toTopNav').show();
+                }
+                if ($(this).scrollTop() < 100) {
+                    $('.toTopNav').hide();
+                }
+            });
+
+
+        });
+
+    </script>
+    <script>$(document).ready(function () {
+            $.getScript("/plugin/Koha/Plugin/Com/ByWaterSolutions/CoverFlow/bower_components/jquery-flipster/dist/jquery.flipster.min.js",
+                function (data, textStatus, jqxhr) {
+                    $("head").append("<link id='flipster-css' href='/plugin/Koha/Plugin/Com/ByWaterSolutions/CoverFlow/bower_components/jquery-flipster/dist/jquery.flipster.min.css' type='text/css' rel='stylesheet' />");
+                    $('#coverflow').load("/coverflow.pl?id=18", function () {
+                        $('.koha-coverflow img').on("load",
+                            function () {
+                                if (this.naturalHeight == 1) {
+                                    $(this).attr("src", "https://raw.githubusercontent.com/bywatersolutions/web-assets/master/NoImage.png");
+                                }
+                            });
+                        var opt = {
+                            'items': '.item', 'minfactor': 15, 'distribution': 1.5, 'scalethreshold': 0, 'staticbelowthreshold': false, 'titleclass':
+                                'itemTitle', 'selectedclass': 'selectedItem', 'scrollactive': true, 'step': { 'limit': 4, 'width': 10, 'scale': true }
+                        }; $('#coverflow').flipster({
+                            autoplay: '3000', buttons: 'true', loop: 'true',
+                        });
+                    });
+                });
+        });
+    </script>
+
+    <div>
+        <p> .</p>
+    </div>
+
+    <footer>
+
+        <div class="row">
+
+            <div class="foo">
+                <div class="column1">
+                    <div class="card1">
+                        <h3 class="module-title">CONTACT US </h3>
+                        <ul class="nav1 ">
+                            <p>Tel: +251116816286</p>
+                            <p>Fax- 0116812065</p>
+                            <p>Po.Box: 445</p>
+                            <li><a href="https://mail.google.com/" target="_blank">FPR@dbu.edu.et</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="column1">
+                    <div class="card1 ">
+                        <h3 class="module-title">IMPORTANT LINKS </h3>
+                        <ul class="nav1 ">
+                            <li class="item1-405"><a
+                                    href="https://www.dbu.edu.et/index.php/2018-12-14-10-59-07">Announcement</a>
+                            </li>
+                            <li class="item2-391"><a href="http://portal.office365.com/" target="_blank">DBU
+                                    Mail</a></li>
+                            <li class="item3-407"><a
+                                    href="https://www.dbu.edu.et/index.php/2018-12-17-13-51-52">Academic
+                                    Calendar</a></li>
+                            <li class="item4-482"><a
+                                    href="https://www.dbu.edu.et/index.php/student-dormitory-placement">Student
+                                    Dormitory Placement </a></li>
+                            <li class="item5-484"><a href="https://www.dbu.edu.et/index.php/documents">Documents</a>
+                            </li>
+                            <li class="item6-485"><a href="https://www.dbu.edu.et/index.php/2012">የክረምት
+                                    ተማሪዎች</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="column1">
+                    <div class="card1 ">
+                        <h3 class="module-title">
+                            SYSTEMS </h3>
+                        <ul class="nav1 ">
+                            <li class="item7-406"><a href="http://10.18.3.8/" target="_blank">Online Public
+                                    Access Catalogue</a></li>
+                            <li class="item8-254"><a href="http://10.18.3.6/" target="_blank">DBU Digital
+                                    Library</a></li>
+                            <li class="item9-319"><a href="http://studentinfo.dbu.edu.et/" target="_blank">SIMS</a>
+                            </li>
+                            <li class="item1-430"><a href="http://etd.dbu.edu.et/" target="_blank">Institutional
+                                    Repository</a></li>
+                            <li class="item2-452"><a href="http://journals.dbu.edu.et/" target="_blank">BIRJSH
+                                    Journal</a></li>
+                            <li class="item3-483"><a href="http://elearning.dbu.edu.et/" target="_blank">E-Learning</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="padding-left: 30%;">
+            <p style="padding-left: 30px;"> Copyright © 2021 Debre Berhan University. All Rights Reserved.</p>
+            <p style="padding-bottom: 20px;">
+                Designed by {4th-year electrical and computer engineering, computer stream}
+            </p>
+        </div>
+    </footer>
+
+  
+
+</body>
+
+</html>

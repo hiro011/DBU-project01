@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/contact_style.css">
+	<!-- <link rel="stylesheet" href="styles/main_style.css"> -->
+    <title>Debre Brehan University /Contact us</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <section id="logobar">
+        <div class="logo">
+            <img src="files/img/logo.jpg" style="width:100%">
+        </div>
+
+    </section>
+    <section id="navbar">
+        <div class="topnav">
+            <div>
+                <!---->
+                <a href="home.html">Home</a>
+				<a class="act" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Log in</a>
+				<a id = "link" href="news.html">News</a>
+				<a id = "link" href="students.html">Students</a>
+				<a id = "link" href="library.html">Library</a>
+				<a id = "link" href="gallery.html">Gallery</a>
+				<a class="active" id = "link" href="contact.html">Contact</a>
+				<a id = "link" href="about.html">About</a>
+				
+            </div>
+        </div>
+
+    </section>
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+    <div class="about-section">
+        <h1>Contact Us</h1>
+        <p>4th year Electrical and Computer Engineering students</p>
+        <p> DBU website semester project</p>
+    </div>
+
+    <h2 style="text-align:center">Contact Form</h2>
+
+    <div class="row">
+        <div class="column">
+            <div class="card">
+              <div class="container3">
+              <form action="/action_page.php">
+                <label for="fname">First Name</label>
+                <input type="text3" id="fname" name="firstname" placeholder="Your name..">
+            
+                <label for="lname">Last Name</label>
+                <input type="text3" id="lname" name="lastname" placeholder="Your last name..">
+            
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+            
+                <input type="submit" value="Submit">
+              </form>
+            </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                    title="Close Modal">&times;</span>
+                <img src="files/img/1144709.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container1">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container1" style="background-color:#f1f1f1">
+                <button onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw"> <a href="files/PHPfiles/forgetpass.php">Forgot Password?</a></span>
+            </div>
+        </form>
+    </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+<footer>
+
+    <div class="row1">
+      
+      <div class="column1">
+        <div class="card1">
+          <h3 class="module-title">CONTACT US </h3>
+          <ul class="nav ">
+            <p>Tel: +251116816286</p>
+            <p>Fax- 0116812065</p>
+            <p>Po.Box: 445</p>
+            <li><a href="https://mail.google.com/" target="_blank">FPR@dbu.edu.et</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="column1">
+        <div class="card1 ">
+          <h3 class="module-title">IMPORTANT LINKS </h3>
+          <ul class="nav ">
+            <li class="item-405"><a href="https://www.dbu.edu.et/index.php/2018-12-14-10-59-07">Announcement</a>
+            </li>
+            <li class="item-391"><a href="http://portal.office365.com/" target="_blank">DBU
+                Mail</a></li>
+            <li class="item-407"><a href="https://www.dbu.edu.et/index.php/2018-12-17-13-51-52">Academic
+                Calendar</a></li>
+            <li class="item-482"><a href="https://www.dbu.edu.et/index.php/student-dormitory-placement">Student
+                Dormitory Placement </a></li>
+            <li class="item-484"><a href="https://www.dbu.edu.et/index.php/documents">Documents</a>
+            </li>
+            <li class="item-485"><a href="https://www.dbu.edu.et/index.php/2012">የክረምት
+                ተማሪዎች</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="column1">
+        <div class="card1 ">
+          <h3 class="module-title">
+            SYSTEMS </h3>
+          <ul class="nav ">
+            <li class="item-406"><a href="http://10.18.3.8/" target="_blank">Online Public
+                Access Catalogue</a></li>
+            <li class="item-254"><a href="http://10.18.3.6/" target="_blank">DBU Digital
+                Library</a></li>
+            <li class="item-319"><a href="http://studentinfo.dbu.edu.et/" target="_blank">SIMS</a>
+            </li>
+            <li class="item-430"><a href="http://etd.dbu.edu.et/" target="_blank">Institutional
+                Repository</a></li>
+            <li class="item-452"><a href="http://journals.dbu.edu.et/" target="_blank">BIRJSH
+                Journal</a></li>
+            <li class="item-483"><a href="http://elearning.dbu.edu.et/" target="_blank">E-Learning</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="padding-left: 30%;">
+      <p style="padding-left: 30px;"> Copyright © 2021 Debre Berhan University. All Rights Reserved.</p>
+      <p style="padding-bottom: 20px;"> Designed by {4th-year electrical and computer engineering, computer stream}</p>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>

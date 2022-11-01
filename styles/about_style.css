@@ -1,0 +1,89 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+
+body {
+  font-style: normal;
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background: #ffffff;
+}
+ 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+ 
+
+.column {
+  float: left;
+  width: 30%;
+  margin-bottom: 50px;
+  padding: 10px 20px;
+}
+.row {
+  float: center;
+  width: 100%;
+  padding-left: 10%;
+}
+
+.column1 {
+	float: left;
+	width: 33.3%;
+	padding: 0 8px;
+	margin-bottom: 13px;
+
+}
+  
+.card {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  background-color:rgb(255, 255, 255);
+  padding: 10px;
+}
+
+.about-section {
+  padding: 15px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 10px;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column1 {
+    width: 100%;
+    display: block;
+  }
+}
+
+/*-- navigation bar h1---*/
+ 
+/*End of Navigetion bar logo*/
+ 
+/* End of login popup*/
+/*-- End of navigation bar --*/
+ 

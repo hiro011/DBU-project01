@@ -1,0 +1,286 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+
+ 
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  background-color:rgb(234, 239, 255);
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+ 
+.nav li:hover{
+  background-color: rgb(190, 186, 224);
+    color: black; 
+}
+  
+  footer{
+    position: relative;
+    height: 12rem;
+    background-color: rgb(31, 97, 197);
+  }
+  .column1 {
+    float: left;
+    width: 33.3%;
+    padding: 0 2px;
+  }
+  .card1{
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+    background-color:rgb(208, 212, 243);
+    height: 10rem;
+    
+  }
+
+.container {
+  padding: 0 8px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column, .column1 {
+    width: 100%;
+    display: block;
+  }
+  
+}
+ 
+
+/*-- navigation bar row ---*/
+
+.topnav{
+  background-color: rgb(31, 97, 197);
+  overflow: hidden;
+  top: 0; /* Stay on top */
+  width: 100%; /* Full width */
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
+  padding-right: 10px; 
+}
+
+.topnav a{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration:  none;
+  font-size: 17px;
+   
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  padding-right: 99px;
+  width: 100%;
+  z-index: 20;
+}
+.sticky + .content {
+  padding-top: 60px;
+}
+ 
+
+#navbar .active:hover{
+  color: white;
+  background-color: rgb(42, 245, 122);
+  }
+
+.topnav a:hover{
+  background-color: rgb(42, 245, 211);
+  color: black; 
+}
+
+.topnav a.active{
+  background-color: #04AA6D;
+  color: white;
+
+}
+
+.topnav a.act{
+  cursor: pointer;
+  float: right;
+}
+.topnav a.act:hover{
+  background-color: rgb(42, 245, 211);
+  color: black; 
+}
+ 
+@media screen and (max-width: 600px) {
+  .topnav a {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+ 
+}
+
+/*End of Navigetion bar logo*/
+
+body {
+  font-style: normal;
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background: #ffffff;
+}
+
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 20%;
+  border-radius: 25%;
+}
+
+.container1 {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+.psw a:hover, .psw a:focus{
+  color: rgb(202, 46, 46);
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 60%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+/* End of login popup*/
+
+/*-- End of navigation bar --*/

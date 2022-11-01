@@ -1,0 +1,206 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+
+/* hero section body */
+  #hero{
+      background-color:rgb(234, 239, 255); 
+  }
+ 
+/*End hero section */
+
+
+/*Navigetion bar */
+ 
+/*End of Navigetion bar logo*/
+
+/*End of login popup */
+
+/* body */
+ 
+/* Add a gray background color with some padding */
+
+body {
+  font-style: normal;
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background: #ffffff;
+}
+
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 25%;
+  padding-left: 10px;
+}
+.leftcolumn a:hover, a:focus{
+   color: red;
+}
+
+/* Right column */
+.rightcolumn {
+  float: right;
+  width: 25%;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+   padding-left: 20px;
+}
+.card2{
+  background-color: white;
+  margin-top: 20px;
+  height: 180px;
+  
+}
+ .moda{
+  background-color: rgb(87, 148, 240);
+  color: white;
+  text-align: center;
+  height: 40px;
+}
+.card2 a:hover{
+  background-color: rgb(153, 176, 241);
+  color: black; 
+}
+.card2 a{
+  padding-left: 10px;
+}
+
+.cardrow{
+  display: inline;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* End of body*/
+
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 900px;
+  position: relative;
+  margin: auto;
+}
+.mainbody {
+  max-width: 900px;
+  position: relative;
+  margin: auto;
+  background-color:bisque;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: purple;
+  font-weight: bold;
+  font-size: 25px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  border: 1px solid gray;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color:  rgb(31, 97, 197);;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: rgb(135, 235, 96);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #4262f0;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+

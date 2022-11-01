@@ -1,0 +1,115 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+
+/* hero section body */
+  #hero{
+      background-color:rgb(180, 190, 219);   
+  }
+
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*End hero section */
+
+.title1{
+  padding-bottom: 20px;
+}
+
+/*Navigetion bar */
+
+.container {
+  padding: 0 10px;
+}
+ 
+/*End of Navigetion bar logo*/
+
+/* End of login popup*/
+
+/* body */
+ 
+/* Add a gray background color with some padding */
+body {
+  font-style: normal;
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background: #ffffff;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+.card2{
+  background-color: white;
+  margin-top: 20px;
+  height: 180px;
+  
+}
+ .moda{
+  background-color: rgb(87, 148, 240);
+  color: white;
+  text-align: center;
+  height: 40px;
+}
+.card2 a:hover{
+  background-color: rgb(153, 176, 241);
+  color: black; 
+}
+.card2 a{
+  padding-left: 10px;
+}
+
+
+.row{
+  overflow: auto;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* End of body*/
+
+
+ 
