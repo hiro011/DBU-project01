@@ -55,25 +55,18 @@ html {
   border: none;
   outline: 0;
   display: inline-block;
-  padding: 10px;
-  color: white;
-  background-color: #000;
+  color: white; 
   text-align: center;
   cursor: pointer;
   width: 100%;
 }
 
 .button:hover {
-  background-color: #555;
+	opacity: 0.5;
+	background-color: #555;
 }
 
-@media screen and (max-width: 650px) {
-  .column, .column1 {
-    width: 100%;
-    display: block;
-  }
-  
-}
+
  
 
 /*-- navigation bar row ---*/
@@ -109,7 +102,15 @@ html {
   padding-top: 60px;
 }
  
-
+@media screen and (max-width: 600px) {
+  .column, .column1 {
+    width: 100%;
+    display: block;
+  }
+  .sticky {
+    position: relative;
+  }
+}
 #navbar .active:hover{
   color: white;
   background-color: rgb(42, 245, 122);

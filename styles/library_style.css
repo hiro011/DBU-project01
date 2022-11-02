@@ -70,7 +70,9 @@ body {
 		margin: 0;
 		padding: 14px;
 	}
-
+  .sticky {
+    position: relative;
+  }
 
 }
 

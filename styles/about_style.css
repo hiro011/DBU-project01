@@ -13,7 +13,15 @@ body {
 *, *:before, *:after {
   box-sizing: inherit;
 }
- 
+
+.profile{
+	border-radius: 10px
+}
+
+.justify-center{
+	display: flex; 
+	justify-content: center
+}
 
 .column {
   float: left;

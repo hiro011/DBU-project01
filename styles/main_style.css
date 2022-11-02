@@ -127,13 +127,13 @@ footer{
   clear: both;
   display: table;
 }
-@media screen and (max-width: 650px) {
-	.column {
-	  width: 100%;
-	  display: block;
-	}
-}
 
+@media screen and (max-width: 650px) {
+  .column, .column1 {
+    width: 100%;
+    display: block;
+  }
+}
 #navbar .act{
   cursor: pointer;
   float: right;
@@ -152,6 +152,9 @@ footer{
     width: 100%;
     margin: 0;
     padding: 14px;
+  }
+  .sticky {
+    position: relative;
   }
  
 }
